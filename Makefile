@@ -2,7 +2,7 @@ start:
 	localstack start -d
 
 run-rm:
-	docker run --rm -t -p 4566:4566 -p 4510-4559:4510-4559 localstack/localstack
+	docker run --rm -t -p 4566:4566 -p 4510-4559:4510-4559 localstack/localstack -env LAMBDA_EVENT_SOURCE_MAPPING=v2
 
 freeze:
 	pip freeze > requirements.txt
